@@ -422,6 +422,7 @@ def train(model, optimizer, train_loader, test_loader, mask, test_ground_truth_l
             if params['enable_tensorboard']:
                 writer.add_scalar('Results/recall@20', Recall, epoch)
                 writer.add_scalar('Results/ndcg@20', NDCG, epoch)
+                writer.add_scalar('Results/precision@20', Precision, epoch)
             test_time = time.strftime("%H: %M: %S", time.gmtime(time.time() - start_time))
             
             print('The time for epoch {} is: train time = {}, test time = {}'.format(epoch, train_time, test_time))
